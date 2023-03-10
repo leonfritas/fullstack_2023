@@ -1,0 +1,182 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(../images/bgInputLogin.jpg) ;   
+}
+
+
+
+.divLogin{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items:center;
+    justify-content: space-around;
+    height: 300px;
+    width: 500px;
+    /* background-color: rgb(13, 58, 53);  */
+    opacity: 97%;
+    padding: 20px;
+    border-radius: 5px;
+    display: none;
+    
+}
+
+.inputsLogin{
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+}
+
+.inputsLogin input{
+    margin-bottom: 10px;
+}
+
+.inputsLogin label{
+    margin-bottom: 5px;
+}
+
+.input{
+    min-height: 20px;
+    width: 400px;
+    border-radius: 10px;
+    outline: none;
+    padding:10px;
+    border: none;
+}
+
+.btnCriarConta,
+.btnConfirmar,
+.btnCancelar {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: white; 
+    position: relative;
+    cursor: pointer;
+}
+
+.btnCriarConta:before, 
+.btnConfirmar:before,
+.btnCancelar:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+
+.btnCriarConta:hover:before,
+.btnConfirmar:hover:before,
+.btnCancelar:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.btnEntrar{
+    text-align: center;
+    height: 30px;
+    width: 100px;
+    color: white;
+    background: none;
+    font-weight: 600;
+    border: none
+}
+.btnEntrar:hover{
+    cursor: pointer;
+}
+
+/*FORMULÁRIO DE CADASTRO*/
+
+.formCriarConta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 600px;
+    width: 500px;
+    color: white;
+    padding: 20px;
+    gap:30px;
+    display:none;
+    font-weight: 600;
+  
+   
+}
+
+.inputsForm{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.btnForm{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    /* gap: 100px; */
+}
+
+.inputForm{
+    min-height: 30px;
+    width: 400px;
+    outline: none;
+    border-radius: 5px;
+    margin: 5px 0 5px 0;
+    padding: 5px;
+    border: none;
+}
+
+.btnConfirmar, .btnCancelar{
+    cursor: pointer;
+    font-weight: 600;
+
+}
+
+.mostrar{
+    display: flex;
+}
+
+.negado{
+    border: red 2px solid;
+    transition: 100s ease-in-out alternate;
+    animation: inputVazio 0.1s  alternate ease-in-out;
+}
+
+
+
+
+@-webkit-keyframes inputVazio{
+    0%{
+        -webkit-transform: translateY(0);
+        
+    }
+    25%{
+        -webkit-transform: translateY(5px)
+    }
+    50%{
+        -webkit-transform: translateY(0)
+
+    }
+
+    75%{
+        -webkit-transform: translateY(-5px)
+    }
+    100%{
+        -webkit-transform: translateY(0);
+        
+    }
+}
+

@@ -1,0 +1,15 @@
+@media(max-width: 750px){
+    h1{
+        margin-bottom:20px;
+    }
+    .input, .inputForm{
+        
+        width: 250px;
+    }
+
+    .btnEntrar{
+        font-size:20px;
+        margin: 20px 0 20px 0;
+    }
+}
+

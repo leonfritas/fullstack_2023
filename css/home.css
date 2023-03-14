@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+body{
+    background: url(../images/bgInputLogin.jpg)
+}
+header{
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    background-color:rgb(156, 154, 154);
+    width: 100%;
+    position: relative;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+    height: 50px;
+    
+}
+
+a{
+    color: #000;
+}
+
+.btnSair{
+    position: absolute;
+    right: 0; 
+    width: 50px;
+    height: 100%;
+    cursor: pointer;
+ 
+}

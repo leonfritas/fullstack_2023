@@ -9,29 +9,48 @@ const btnConfirmar = document.querySelector('.btnConfirmar')
 const inputForm = document.querySelectorAll('.inputForm')
 
 
-function entrar(){
-btnEntrar.addEventListener('click',() =>{
-    if (inputUsuario.value == '' & inputSenha.value == ''){
+
+function entrar(){   
+    if (inputUsuario.value == '' && inputSenha.value == ''){
         alert('Digite seu nome de usuário e senha para acessar.')
+        console.log('Digite seu nome de usuário e senha para acessar.')
+        return
     }    
     if (inputUsuario.value == '' & inputSenha.value != '' ){
         alert('Digite seu usuário para acessar.')
-            inputUsuario.value = ''
-            inputSenha.value = ''
+        limparInputLogin()
+        return
     }else if(inputUsuario.value != '' & inputSenha.value == '' ){ 
         alert('Digite sua senha para acessar.')
-            inputUsuario.value = ''
-            inputSenha.value = ''
-}})
+          limparInputLogin()
+          return  
+    }
+    if (inputUsuario.value == 'leo' & inputSenha.value == '123'){
+        location.href = 'home.html'
+        limparInputLogin()
+        return
+        }else if(inputUsuario.value != 'leo' & inputSenha.value != '123'){
+        alert('Usuário ou senha incorretos')
+        limparInputLogin()
+        return
+        }
 }
 
-entrar()
+function limparInputLogin(){
+    inputUsuario.value = ''
+    inputSenha.value = ''
+}
 
+function limparInputsForm(){
+    inputForm.forEach(input =>{
+        input.value = ''
+    })
+}
 
 
 inputSenha.addEventListener('keydown',(event)=>{
     if(event.which == 13 ){
-
+        
        entrar() 
     }
     })
@@ -39,7 +58,7 @@ inputSenha.addEventListener('keydown',(event)=>{
 btnCriarConta.addEventListener('click', ()=>{
     divLogin.classList.remove('mostrar')
     formCriarConta.classList.add('mostrar')
-   console.log(formCriarConta)
+   
 
    inputForm.forEach(input =>{
     input.classList.remove('negado')
@@ -55,20 +74,37 @@ btnCancelar.addEventListener('click', ()=>{
     })
 })
 
-
+const todosInput = inputForm
 //input.nextElementSibling.remove("negado");
 
-
 btnConfirmar.addEventListener('click',(erro)=>{  
+    
+    
     inputForm.forEach(input =>{
         if(input.value == '' ){
-            erro.preventDefault()
-            input.classList.add('negado')
+        erro.preventDefault()
+        input.classList.remove('negado')
+        input.classList.add('negado')
         }else{
-            input.classList.remove('negado')
+        input.classList.remove('negado')
+        }
+        })
+
+        inputForm.forEach(input => {
+        if(inputForm[0].value != '' &&
+        inputForm[1].value != ''    &&
+        inputForm[2].value != ''    &&
+        inputForm[3].value != ''
+        ){
+        divLogin.classList.add('mostrar')
+        formCriarConta.classList.remove('mostrar') 
+        limparInputsForm()
+        alert('Conta criada com sucesso.')
         }
     })
-})
+        }
+        )
+
 
 inputForm.forEach(input=>{
     input.addEventListener('keydown',()=>{
@@ -77,6 +113,8 @@ inputForm.forEach(input=>{
         }
     })
 })
+
+
 
 
 
